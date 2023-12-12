@@ -4,5 +4,7 @@ UserModel ={
     "lastName":"string",
     "email":"string",
     "password":"string",
-    "country":"string"
+    "country":"string",
+    "createdAt": "DATE",
+    "updatedAt":"DATE"
 }

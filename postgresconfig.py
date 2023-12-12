@@ -16,7 +16,8 @@ def ConnectPostgres(db_params):
     except psycopg2.Error as err:
         print(f"Error: {err}")
 
-    cursor = conn.cursor
+    cursor = conn.cursor()
+    conn.autocommit = True
     print(f"Connected to Database sucessfully")
     return cursor
 

@@ -1,4 +1,5 @@
 from config import config
+import psycopg2
 
 cur = config.DBCursor
 
@@ -6,8 +7,8 @@ cur = config.DBCursor
 class _QueryBuilder():
 
     def CreateTable(self, tablename, columns):
-        query = "CREATE TABLE IF NOT EXIST"
-        query += " " + tablename + "("
+        query = "CREATE TABLE IF NOT EXISTS"
+        query += " " + tablename + " ("
 
         for x in columns:
             columntype = self.ConvertTypes(columns[x])
@@ -15,7 +16,12 @@ class _QueryBuilder():
         
         query = query.rstrip(", ")
         query += ")"
-        print(query)
+
+        try:
+            cur.execute(query)
+        except psycopg2.Error as err:
+            print(f"Error creating table {tablename} with error {err}")
+            return
 
 
     def ConvertTypes(self, columntype):
