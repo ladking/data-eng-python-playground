@@ -1,7 +1,5 @@
 import psycopg2
 
-
-
 def ConnectPostgres(db_params):
     params_key = ["host", 'port','user', 'password', 'database']
     for keys in db_params:
@@ -19,5 +17,5 @@ def ConnectPostgres(db_params):
     cursor = conn.cursor()
     conn.autocommit = True
     print(f"Connected to Database sucessfully")
-    return cursor
+    return cursor,
 

@@ -4,7 +4,7 @@ import psycopg2
 cur = config.DBCursor
 
 
-class _QueryBuilder():
+class _QueryBuilderPostgres():
 
     def CreateTable(self, tablename, columns):
         query = "CREATE TABLE IF NOT EXISTS"
@@ -39,4 +39,4 @@ class _QueryBuilder():
             return columntype
 
 
-queryBuilder = _QueryBuilder()
+queryBuilder = _QueryBuilderPostgres()

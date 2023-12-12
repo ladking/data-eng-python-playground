@@ -6,7 +6,7 @@ class _Config():
             "password":"postgres",
             "user": "postgres",
             "port": 5432,
-            "database":"udacity"
+            "database":"testdb"
          }
         self.DBCursor = ConnectPostgres(self.db_params)
 
