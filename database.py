@@ -36,7 +36,7 @@ class _QueryBuilderPostgres():
             return "TIMESTAMP"
             
         else:
-            return columntype
+            return "VARCHAR(50)"
 
 
 queryBuilder = _QueryBuilderPostgres()

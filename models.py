@@ -1,10 +1,10 @@
 
 UserModel ={
+    "id":"int",
     "firstName":"string",
     "lastName":"string",
     "email":"string",
-    "password":"string",
+    "gender":"string",
+    "level":"string",
     "country":"string",
-    "createdAt": "DATE",
-    "updatedAt":"DATE"
 }

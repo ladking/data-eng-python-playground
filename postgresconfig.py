@@ -17,5 +17,5 @@ def ConnectPostgres(db_params):
     cursor = conn.cursor()
     conn.autocommit = True
     print(f"Connected to Database sucessfully")
-    return cursor,
+    return cursor
 
